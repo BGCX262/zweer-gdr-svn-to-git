@@ -1,0 +1,9 @@
+body.body_esterno
+{
+    background: url("../../images/sfondo/sfondo.jpg") no-repeat fixed top;
+}
+
+dd
+{
+    margin-bottom: 10px;
+}

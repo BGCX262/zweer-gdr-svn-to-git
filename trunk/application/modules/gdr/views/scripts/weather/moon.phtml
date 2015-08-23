@@ -1,0 +1,5 @@
+<div class="meteo_luna">
+    <?= $this->import_Img('weather/moon/' . intval($this->object->getAge()) . '.jpg', array('alt' => $this->translate($this->object->getPhaseText()))) ?>
+    <div class="meteo_luna_fase"><?= $this->translate($this->object->getPhaseText()) ?></div>
+    <div class="meteo_luna_zodiaco"><?= $this->translate($this->object->getZodiacText()) ?></div>
+</div>

@@ -1,0 +1,17 @@
+#descrizione1,
+#descrizione2,
+#descrizione3
+{
+    width: 710px;
+    height: 200px;
+
+    background: #FFF url("../../images/sfondo/sfondo-textarea.png") repeat-x;
+    border: 1px solid #BDBDBD;
+    border-top: 0;
+
+    padding: 5px;
+
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}

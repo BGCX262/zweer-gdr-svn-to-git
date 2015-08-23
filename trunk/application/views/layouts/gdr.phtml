@@ -1,0 +1,64 @@
+<?php
+
+$this->import_Css(array('js/mootools/3rdpart/zwe-box/Source/themes/default/zwebox',
+                        'js/mootools/3rdpart/textboxlist/Source/TextboxList',
+                        'js/mootools/3rdpart/textboxlist/Source/TextboxList.Autocomplete'), true);
+$this->import_Css(array('gdr/panels',
+                        'gdr/main',
+                        'gdr/messaggi',
+                        'gdr/meteo'));
+$this->import_Css();
+
+$this->import_Js(array('mootools/3rdpart/zwe-box/Demos/Overlay',
+                       'mootools/3rdpart/zwe-box/Source/zwebox',
+                       'mootools/3rdpart/textboxlist/Source/TextboxList',
+                       'mootools/3rdpart/textboxlist/Source/TextboxList.Autocomplete',
+                       'mootools/3rdpart/textboxlist/Source/TextboxList.Autocomplete.Binary',
+                       'gdr/panels',
+                       'gdr/main'));
+$this->import_Js();
+
+?>
+<?= $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml"<?= isset($this->titleImg) ? ' class="body_img"' : '' ?>>
+
+<head>
+    <?= $this->headTitle() . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headMeta()) . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headLink()) . "\n" ?>
+    <?= str_replace("\n", "\n    ", $this->headStyle()) . "\n" ?>
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/js/mootools/3rdpart/zwe-box/Source/themes/default/zwebox.ie6.css" />
+    <![endif]-->
+    <?= str_replace("\n", "\n    ", $this->headScript()) . "\n" ?>
+<?php if(Zend_Auth::getInstance()->hasIdentity()) : ?>
+    <?= str_replace("\n", "\n    ", $this->js("var Berlino_IDUser = '" . Zend_Auth::getInstance()->getIdentity()->IDUser . "';")) . "\n" ?>
+<?php endif; ?>
+</head>
+
+<body>
+    <div class="contenitore_bottoni_destra">
+        <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'admin'), 'default') ?>" title="Gestione"><?= $this->import_Img('icons/gear_wheel_32x32_black.png', array('alt' => 'Gestione')) ?></a>
+        <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'mappa'), 'default') ?>" title="Mappa"><?= $this->import_Img('icons/globe_32x32_green.png', array('alt' => 'Mappa')) ?></a>
+        <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'forum'), 'default') ?>" title="Forum"><?= $this->import_Img('icons/newspaper_32x32_blue.png', array('alt' => 'Forum')) ?></a>
+        <a href="<?= $this->url(array('controller' => 'vedi', 'pg' => Zend_Auth::getInstance()->getIdentity()->Url), 'avatar') ?>" title="Avatar"><?= $this->import_Img('icons/picture_32x32_gray.png', array('alt' => 'Avatar')) ?></a>
+        <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>" title="Esci"><?= $this->import_Img('icons/door_32x32_red.png', array('alt' => 'Esci')) ?></a>
+    </div>
+    <?php if(Zend_Auth::getInstance()->hasIdentity()) : ?>
+    <div class="contenitore_bottoni_sinistra">
+        <a href="<?= $this->url() ?>" title="Online" id="top_button_online"><?= $this->import_Img('icons/user_32x32.png', array('alt' => 'Online')) ?></a>
+        <a href="<?= $this->url() ?>" title="Messaggi" id="top_button_messaggi"><?= $this->import_Img('icons/mail_32x32_yellow.png', array('alt' => 'Messaggi')) ?></a>
+        <a href="<?= $this->url() ?>" title="Notifiche" id="top_button_notifiche"><?= $this->import_Img('icons/comment_32x32_purple.png', array('alt' => 'Notifiche')) ?></a>
+    </div>
+    <?php endif; ?>
+    <div class="contenitore">
+        <?php if(isset($this->titleImg)) : ?>
+        <div class="contenitore_titolo">
+            <?= $this->import_Text($this->titleImg, array('font' => 'stampete.ttf', 'fontSize' => 48)) ?>
+        </div>
+        <?php endif; ?>
+        <?= $this->layout()->content ?>
+    </div>
+</body>
+
+</html>

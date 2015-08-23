@@ -1,0 +1,50 @@
+#nuovo_messaggio_destinatari
+{
+    width: 400px;
+}
+
+#nuovo_messaggio_testo
+{
+    width: 400px;
+    height: 150px;
+}
+
+.messaggi_nuovo
+{
+    text-align: center;
+    padding: 5px 0;
+}
+
+.messaggi_contenitore .messaggio_contenitore
+{
+    padding: 5px 0 10px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.messaggi_contenitore .messaggio_contenitore .messaggio_autore
+{
+    font-weight: bold;
+}
+.messaggi_contenitore .messaggio_contenitore .messaggio_data,
+.messaggi_contenitore .messaggio_contenitore .messaggio_testo
+{
+    padding-left: 10px;
+}
+.messaggi_contenitore .messaggio_contenitore .messaggio_data
+{
+    color: #666;
+}
+
+.conversazione_contenitore .messaggio_contenitore
+{
+    padding: 5px 0 10px;
+    border-bottom: 1px solid #AAA;
+}
+.conversazione_contenitore .messaggio_contenitore .messaggio_autore
+{
+    font-weight: bold;
+}
+.conversazione_contenitore .messaggio_contenitore .messaggio_data
+{
+    padding-left: 10px;
+    color: #AAA;
+}

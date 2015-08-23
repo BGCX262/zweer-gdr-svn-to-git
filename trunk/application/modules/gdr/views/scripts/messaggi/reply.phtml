@@ -1,0 +1,8 @@
+<?php $D = new Zend_Date($this->messaggio->Date); ?>
+<div class="messaggio_contenitore">
+    <div class="messaggio_autore"><?= $this->messaggio->Sender ?></div>
+    <div class="messaggio_data"><?= $D ?></div>
+    <div class="messaggio_testo">
+        <?= $this->escape($this->messaggio->Text) ?>
+    </div>
+</div>

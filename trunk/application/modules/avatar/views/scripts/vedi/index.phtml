@@ -1,0 +1,33 @@
+<?php
+
+$Nascita = new Zend_Date($this->pg->PgDateOfBirth, null, 'it-IT');
+
+?>
+<?= $this->avatarMenu($this->pg, 'vedi') ?>
+<div class="contenitore_avatar">
+    <?php if($this->pg->Image) : ?>
+    <div class="contenitore_avatar_img">
+        <?= $this->import_Img($this->pg->Image) ?>
+    </div>
+    <?php endif; ?>
+    <ul>
+        <li><span class="avatar_attributo">Nome:</span> <?= $this->pg->Name ?></li>
+        <li><span class="avatar_attributo">Cognome:</span> <?= $this->pg->Surname ?></li>
+        <?php if($this->pg->PgDateOfBirth) : ?>
+        <li><span class="avatar_attributo">Data di nascita:</span> <?= $Nascita->get(Zend_Date::DAY) ?> <?= $Nascita->get(Zend_Date::MONTH_NAME) ?> <?= $Nascita->get(Zend_Date::YEAR) ?></li>
+        <li><span class="avatar_attributo">Età:</span> <?= $this->getAge($Nascita) ?></li>
+        <?php endif; ?>
+        <?php if($this->pg->PgPlaceOfBirth) : ?>
+        <li><span class="avatar_attributo">Luogo di nascita:</span> <?= $this->pg->PgPlaceOfBirth ?></li>
+        <?php endif; ?>
+        <?php if($this->pg->Description1) : ?>
+        <li><span class="avatar_attributo">Descrizione fisica:</span> <?= $this->pg->Description1 ?></li>
+        <?php endif; ?>
+        <?php if($this->pg->Description2) : ?>
+        <li><span class="avatar_attributo">Descrizione caratteriale:</span> <?= $this->pg->Description2 ?></li>
+        <?php endif; ?>
+        <?php if($this->pg->Description3) : ?>
+        <li><span class="avatar_attributo">Vita e storia passata:</span> <?= $this->pg->Description3 ?></li>
+        <?php endif; ?>
+    </ul>
+</div>

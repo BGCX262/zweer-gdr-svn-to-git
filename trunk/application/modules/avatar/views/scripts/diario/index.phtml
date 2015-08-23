@@ -1,0 +1,38 @@
+<?= $this->avatarMenu($this->pg, 'diario') ?>
+<?php if($this->pg->canModify()) : ?>
+<div class="contenitore_diario_ nuovo">
+    <a href="<?= $this->url(array('controller' => 'diario', 'action' => 'nuovaPagina', 'module' => 'avatar'), 'default') ?>"><?= $this->import_Text('Nuova Pagina', array('font' => 'stampete.ttf')) ?></a>
+</div>
+<?php endif; ?>
+<div class="contenitore_diario_rss">
+    <a href="<?= $this->url() ?>.rss">
+        <?= $this->import_Img('icons/rss_32x32_orange.png', array('alt' => 'rss')) ?>
+    </a>
+</div>
+<div class="contenitore_diario">
+    <?php foreach($this->blog as $entry) : ?>
+    <?php $D = new Zend_Date($entry->Date); ?>
+    <div class="diario">
+        <?php if($this->pg->canModify()) : ?>
+        <div class="diario_bottoni">
+            <a href="<?= $this->url(array('controller' => 'diario', 'action' => 'modificaPagina', 'module' => 'avatar', 'id' => $entry->IDNews), 'default') ?>" title="Modifica pagina">
+                <?= $this->import_Img('icons/edit_24x24_yellow.png', array('alt' => 'Modifica')) ?>
+            </a>
+            <a href="<?= $this->url(array('controller' => 'diario', 'action' => 'cancellaPagina', 'module' => 'avatar', 'id' => $entry->IDNews), 'default') ?>" title="Cancella pagina">
+                <?= $this->import_Img('icons/delete_24x24_red.png', array('alt' => 'Cancella')) ?>
+            </a>
+        </div>
+        <?php endif; ?>
+        <div class="diario_autore">
+            Scritto da <?= $entry->Author ?> il giorno <?= $D->get(Zend_Date::DAY) ?> <?= $D->get(Zend_Date::MONTH_NAME) ?> <?= $D->get(Zend_Date::YEAR) ?>
+        </div>
+        <div class="diario_titolo">
+            <a href="<?= $this->url(array('pg' => $this->pg->Url, 'pagina' => $entry->IDNews), 'blogPermalink') ?>"><?= $this->escape($entry->Title) ?></a>
+        </div>
+        <div class="diario_testo">
+            <?php $BBCode = Zwe_Markup_Bbcode::getInstance(); ?>
+            <?= $BBCode->render($entry->Text) ?>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>

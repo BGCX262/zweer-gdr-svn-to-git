@@ -1,0 +1,5 @@
+<div class="meteo_previsioni meteo_<?= (date('G') < 5 ? 'notte' : (date('G') < 12 ? 'mattino' : (date('G') < 18 ? 'pomeriggio' : (date('G') < 22 ? 'sera' : 'notte')))) ?> weather_condition_<?= $this->object->getConditionRaw() ?>">
+    <div class="meteo_previsioni_giorno"><?= $this->object->getDay() ?></div>
+    <div class="meteo_previsioni_minima"><?= intval(5 / 9 * ($this->object->getTemp('Min') - 32)) ?>&deg;C</div>
+    <div class="meteo_previsioni_massima"><?= intval(5 / 9 * ($this->object->getTemp('Max') - 32)) ?>&deg;C</div>
+</div>

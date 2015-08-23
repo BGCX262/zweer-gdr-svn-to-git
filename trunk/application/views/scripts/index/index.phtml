@@ -1,0 +1,36 @@
+<?php
+
+$this->import_Css(array('js/mootools/3rdpart/moodialog/Source/css/MooDialog'), true);
+
+$this->import_Css(array('out/login',
+                        'mootools/3rdpart/moodialog'));
+
+$this->import_Js(array('mootools/3rdpart/moodialog/Source/Overlay',
+                       'mootools/3rdpart/moodialog/Source/MooDialog',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Fx',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Alert',
+                       'mootools/3rdpart/moodialog/Source/MooDialog.Error',
+                       'mootools/3rdpart/floatingtips/Source/floatingtips',
+                       'out/login'));
+
+?>
+<?= $this->errors ? $this->errorsAlert($this->errors) : '' ?>
+<div class="contenitore_login">
+    <?= $this->form ?>
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'recoverEmail', 'module' => 'default'), 'default') ?>">
+        <?= $this->import_Img('spacer.gif', array('alt' => 'Recupera Password', 'title' => 'Recupera Password', 'class' => 'login_link_recupera')) ?>
+    </a>
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'register', 'module' => 'default'), 'default') ?>">
+        <?= $this->import_Img('spacer.gif', array('alt' => 'Iscrizione', 'title' => 'Iscrizione', 'class' => 'login_link_iscrizione')) ?>
+    </a>
+    <a href="<?= $this->url(array(), 'guida') ?>">
+        <?= $this->import_Img('spacer.gif', array('alt' => 'Guida', 'title' => 'Guida', 'class' => 'login_link_guida')) ?>
+    </a>
+</div>
+<div class="contenitore_info">
+    BERLINO GDR ver. 3.0 - Tutti i diritti riservati (2006 - 2011). Gioco di Ruolo Online vietato ai minori di 14 anni.<br />
+    I codici, le regole e tutto il materiale presente su questo sito è di proprietà dello Staff.<br />
+    Il dominio è di proprietà di Niccolò Olivieri, quale programmatore e gestore del GDR e proprietario dei codici di programmazione.<br />
+    Il materiale utilizzate è di creazione degli utenti di BERLINO GDR ma, in alcuni casi, è tratto liberamente dalla rete web; in caso di materiale della rete si indicheranno la fonte di riferimento: l'autore, o chi per lui, può richieder e la rimozione delle immagini inviandoci una mail a questo indirizzo: <a href="mailto: <?= Zend_Registry::get('parameters')->registry->email ?>"><?= Zend_Registry::get('parameters')->registry->email ?></a><br /><br />
+    Per contatti: <a href="mailto: <?= Zend_Registry::get('parameters')->registry->email ?>"><?= Zend_Registry::get('parameters')->registry->email ?></a>
+</div>

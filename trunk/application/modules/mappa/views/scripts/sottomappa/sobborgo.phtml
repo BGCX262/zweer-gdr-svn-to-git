@@ -1,0 +1,19 @@
+<?php
+
+$this->title = "Sobborgo";
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('gdr/mappa'));
+
+?>
+<map name="luoghi_sobborgo" id="luoghi_sobborgo">
+    <area alt="Discarica" shape="rect" coords="52,240,224,329" href="<?= $this->url(array('luogo' => 'discarica', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Teatro Abbandonato" shape="rect" coords="224,350,394,440" href="<?= $this->url(array('luogo' => 'teatroAbbandonato', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Case Popolari" shape="rect" coords="392,239,564,330" href="<?= $this->url(array('luogo' => 'casePopolari', 'action' => 'descrizione'), 'luoghi') ?>" />
+</map>
+
+<div class="contenitore_mappa">
+    <?= $this->import_Img('luoghi/sobborgo-bianco.png', array('alt' => 'mappa', 'usemap' => '#luoghi_sobborgo')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'mappa'), 'default') ?>">&lt;-- Torna alla mappa</a>
+</div>

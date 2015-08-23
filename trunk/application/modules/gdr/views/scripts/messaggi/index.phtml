@@ -1,0 +1,18 @@
+<div class="messaggi_nuovo">
+    <a href="<?= $this->url(array('action' => 'nuovo', 'controller' => 'messaggi', 'module' => 'gdr'), 'default') ?>.ajax?zwebox[width]=500&zwebox[height]=400" title="Invia un nuovo messaggio" class="zwebox">
+        <?= $this->import_Text('Scrivi Messaggio', array('font' => 'stampete.ttf')) ?>
+    </a>
+</div>
+
+<div class="messaggi_contenitore">
+    <?php foreach($this->messaggi as $messaggio) : ?>
+    <?php $D = new Zend_Date($messaggio->Date); ?>
+    <div class="messaggio_contenitore">
+        <div class="messaggio_autore"><a href="<?= $this->url(array('controller' => 'vedi', 'pg' => $messaggio->TheOther->Url), 'avatar') ?>"><?= $messaggio->TheOther ?></a></div>
+        <div class="messaggio_data"><?= $D ?></div>
+        <div class="messaggio_testo">
+            <a href="<?= $this->url(array('action' => 'leggi', 'controller' => 'messaggi', 'module' => 'gdr', 'messaggio' => $messaggio->IDMessage), 'default') ?>.ajax?zwebox[width]=500&zwebox[height]=400" class="zwebox"><?= $this->getTextPreview($messaggio->Text) ?></a>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>

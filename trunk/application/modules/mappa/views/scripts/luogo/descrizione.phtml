@@ -1,0 +1,26 @@
+<?php
+
+$this->title = $this->titleImg = $this->luogo->Name;
+$this->headTitle()->append($this->title);
+$this->headTitle()->append('Descrizione');
+
+$this->import_Css(array('gdr/mappa'));
+
+?>
+<div class="luogo_back">
+    <?php if($this->luogo->Parent->IDParent == 0) : ?>
+    <a href="<?= $this->url(array('controller' => 'sottomappa', 'action' => $this->luogo->Parent->Url, 'module' => 'mappa'), 'default') ?>">&lt;-- Torna alla sottomappa</a>
+    <?php else : ?>
+    <a href="<?= $this->url(array('luogo' => $this->luogo->Parent->Url, 'action' => 'descrizione'), 'luoghi') ?>">&lt;-- Torna alla sottomappa</a>
+    <?php endif; ?>
+</div>
+
+<div class="luogo_descrizione">
+    <?= $this->luogo->Description ?>
+</div>
+
+<div class="luogo_entra">
+    <a href="<?= $this->url(array('luogo' => $this->luogo->Url), 'chat') ?>">
+        <?= $this->import_Text('Entra', array('font' => 'stampete.ttf', 'fontSize' => 32)) ?>
+    </a>
+</div>

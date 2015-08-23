@@ -1,0 +1,20 @@
+<?php
+
+$this->title = "Centro Città";
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('gdr/mappa'));
+
+?>
+<map name="luoghi_centroCitta" id="luoghi_centroCitta">
+    <area alt="Parco Comunale" shape="rect" coords="204,210,376,298" href="<?= $this->url(array('luogo' => 'parcoComunale', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Pub Sound" shape="rect" coords="494,209,666,299" href="<?= $this->url(array('luogo' => 'pubSound', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Biblioteca" shape="rect" coords="205,355,376,446" href="<?= $this->url(array('luogo' => 'biblioteca', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Porta di Brandeburgo" shape="rect" coords="496,356,666,444" href="<?= $this->url(array('luogo' => 'portaDiBrandeburgo', 'action' => 'descrizione'), 'luoghi') ?>" />
+</map>
+
+<div class="contenitore_mappa">
+    <?= $this->import_Img('luoghi/centroCitta-bianco.png', array('alt' => 'mappa', 'usemap' => '#luoghi_centroCitta')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'mappa'), 'default') ?>">&lt;-- Torna alla mappa</a>
+</div>

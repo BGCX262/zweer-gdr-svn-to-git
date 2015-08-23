@@ -1,0 +1,109 @@
+div.contenitore_login
+{
+    margin-top: 50px;
+
+    width: 800px;
+    height: 600px;
+    position: relative;
+
+    background: url("../../images/login.jpg") no-repeat top left;
+}
+div.contenitore_info
+{
+    margin-top: 20px;
+
+    text-align: center;
+    color: #999;
+}
+
+input.login_email,
+input.login_password
+{
+    position: absolute;
+    left: 474px;
+
+    width: 140px;
+    height: 14px;
+
+    background-color: transparent;
+    border-color: transparent;
+
+    color: #DDD;
+}
+input.login_email:focus,
+input.login_email:hover,
+input.login_password:focus,
+input.login_password:hover
+{
+    background-color: #000;
+}
+input.login_email
+{
+    top: 238px;
+}
+input.login_password
+{
+    top: 269px;
+    height: 13px;
+}
+input.login_submit
+{
+    position: absolute;
+    top: 293px;
+    left: 407px;
+
+    width: 55px;
+
+    background-color: transparent;
+    border-color: transparent;
+}
+
+img.login_link_recupera,
+img.login_link_iscrizione,
+img.login_link_guida
+{
+    position: absolute;
+    border: 1px solid transparent;
+    height: 20px;
+}
+img.login_link_recupera
+{
+    top: 551px;
+    left: 156px;
+
+    width: 170px;
+}
+img.login_link_iscrizione
+{
+    top: 523px;
+    left: 402px;
+
+    width: 100px;
+}
+img.login_link_guida
+{
+    top: 548px;
+    left: 626px;
+
+    width: 51px;
+}
+
+.MooDialog
+{
+    width: 500px;
+    margin-left: -250px;
+
+    height: 110px;
+}
+
+.floating-tip
+{
+    background-color: black;
+    padding: 5px 15px;
+    color: #dddddd;
+    font-weight: bold;
+    font-size: 11px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}

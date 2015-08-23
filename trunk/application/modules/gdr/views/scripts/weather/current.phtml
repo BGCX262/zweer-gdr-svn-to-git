@@ -1,0 +1,5 @@
+<div class="meteo_oggi meteo_<?= (date('G') < 5 ? 'notte' : (date('G') < 12 ? 'mattino' : (date('G') < 18 ? 'pomeriggio' : (date('G') < 22 ? 'sera' : 'notte')))) ?> weather_condition_<?= $this->object->getConditionRaw() ?>">
+    <div class="meteo_oggi_temperatura"><?= $this->object->getTemp('Min') ?>&deg;C</div>
+    <div class="meteo_oggi_umidita"><?= preg_replace('/Humidity: (.*)%/i', $this->translate(Zwe_Weather_Day::HUMIDITY_STRING), $this->object->getHumidity()) ?></div>
+    <div class="meteo_oggi_vento"><?= preg_replace('/Wind: (.*) at (.*) mph/e', $this->translate(Zwe_Weather_Day::WIND_STRING), $this->object->getWind()) ?></div>
+</div>

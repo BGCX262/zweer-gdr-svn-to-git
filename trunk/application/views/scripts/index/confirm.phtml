@@ -1,0 +1,23 @@
+<?php
+
+$this->title = 'Conferma Iscrizione';
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('out/esterno'));
+
+?>
+<div style="text-align: center;">
+    <?= $this->import_Img("out/iscrizione.png", array('alt' => 'Iscrizione')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>">&lt;-- Torna alla homepage</a>
+    <br /><br />
+    <?php if($this->ok) : ?>
+        La conferma dell'iscrizione è avvenuta correttamente. Ora puoi accedere al sito e cominciare subito la tua nuova avventura!
+    <br /><br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>">&lt;-- Torna alla homepage</a>
+    <?php else : ?>
+        C'è stato un problema in fase di conferma. Controlla di aver cliccato sul link giusto, di non aver già attivato quest'account o, nel caso tu abbia fatto il copia-incolla del link, di aver incluso tutto il link e non aver dimenticato qualche carattere.
+        <br /><br />
+        Nel caso la conferma continuasse a dare esito negativo sei pregato di contattarci a questo indirizzo email: <a href="mailto:<?= Zend_Registry::get('parameters')->registry->email ?>"><?= Zend_Registry::get('parameters')->registry->email ?></a>
+    <?php endif; ?>
+</div>

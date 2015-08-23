@@ -1,0 +1,39 @@
+<div style="text-align: center;">
+    <?= $this->import_Text('Nuovo Messaggio', array('font' => 'stampete.ttf')) ?>
+</div>
+<?= $this->form ?>
+<div id="nuovo_messaggio_form_update" style="display: none;"></div>
+
+<script type="text/javascript">
+
+    (function(){
+        var NewForm = document.id('nuovo_messaggio_form');
+
+        new Form.Validator.Inline(NewForm, {
+            onFormValidate: function(passed){
+                if(!passed)
+                    ZweBox.getInstance().shake();
+            }
+        });
+        
+        new Form.Request(NewForm, document.id('nuovo_messaggio_form_update'), {
+            onSuccess: function(){
+                ZweBox.getInstance().close();
+            }
+        });
+
+        new TextboxList('nuovo_messaggio_destinatari', {
+            unique: true,
+            plugins: {
+                autocomplete: {
+                    minLength: 3,
+                    queryRemote: true,
+                    remote: {
+                        url: '/gdr/utenti/lista.json'
+                    }
+                }
+            }
+        });
+    }).delay(2000);
+
+</script>

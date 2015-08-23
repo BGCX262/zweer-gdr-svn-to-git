@@ -1,0 +1,16 @@
+<?php
+
+$this->import_Css(array('out/esterno'));
+
+$this->headTitle()->append($this->ThePage->Title);
+
+?>
+<br />
+<h1><?= $this->ThePage->Title ?></h1>
+<h3><?= $this->ThePage->Subtitle ?></h3>
+
+<a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>">&lt;-- Torna alla homepage</a><br /><br />
+
+<?= $this->ThePage->Text ?>
+
+<br /><br /><a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>">&lt;-- Torna alla homepage</a>

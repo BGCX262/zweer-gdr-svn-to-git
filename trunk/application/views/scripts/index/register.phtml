@@ -1,0 +1,17 @@
+<?php
+
+$this->title = 'Iscrizione';
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('out/esterno'));
+
+?>
+<div style="text-align: center;">
+    <?= $this->import_Img("out/iscrizione.png", array('alt' => 'Iscrizione')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'default'), 'default') ?>">&lt;-- Torna alla homepage</a>
+</div>
+
+<div style="margin-left: 300px;">
+    <?= $this->form ?>
+</div>

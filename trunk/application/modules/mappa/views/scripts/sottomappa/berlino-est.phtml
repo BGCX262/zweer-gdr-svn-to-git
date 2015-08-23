@@ -1,0 +1,20 @@
+<?php
+
+$this->title = "Berlino Est";
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('gdr/mappa'));
+
+?>
+<map name="luoghi_berlinoEst" id="luoghi_berlinoEst">
+    <area alt="Ponte sul fiume Havel" shape="rect" coords="86,256,256,346" href="<?= $this->url(array('luogo' => 'ponteSulFiumeHavel', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Centro Commerciale" shape="rect" coords="427,257,597,344" href="<?= $this->url(array('luogo' => 'centroCommerciale', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Cimitero" shape="rect" coords="85,391,254,482" href="<?= $this->url(array('luogo' => 'cimitero', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Penitenziario" shape="rect" coords="428,391,600,482" href="<?= $this->url(array('luogo' => 'penitenziario', 'action' => 'descrizione'), 'luoghi') ?>" />
+</map>
+
+<div class="contenitore_mappa">
+    <?= $this->import_Img('luoghi/berlinoEst-bianco.png', array('alt' => 'mappa', 'usemap' => '#luoghi_berlinoEst')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'mappa'), 'default') ?>">&lt;-- Torna alla mappa</a>
+</div>

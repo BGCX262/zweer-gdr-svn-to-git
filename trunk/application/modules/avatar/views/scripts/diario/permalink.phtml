@@ -1,0 +1,25 @@
+<?= $this->avatarMenu($this->pg, 'diario') ?>
+<?php $entry = $this->pagina; ?>
+<?php $D = new Zend_Date($entry->Date); ?>
+<div class="diario">
+    <?php if($this->pg->canModify()) : ?>
+    <div class="diario_bottoni">
+        <a href="<?= $this->url(array('controller' => 'diario', 'action' => 'modificaPagina', 'module' => 'avatar', 'id' => $entry->IDNews), 'default') ?>" title="Modifica pagina">
+            <?= $this->import_Img('icons/edit_24x24_yellow.png', array('alt' => 'Modifica')) ?>
+        </a>
+        <a href="<?= $this->url(array('controller' => 'diario', 'action' => 'cancellaPagina', 'module' => 'avatar', 'id' => $entry->IDNews), 'default') ?>" title="Cancella pagina">
+            <?= $this->import_Img('icons/delete_24x24_red.png', array('alt' => 'Cancella')) ?>
+        </a>
+    </div>
+    <?php endif; ?>
+    <div class="diario_autore">
+        Scritto da <?= $entry->Author ?> il giorno <?= $D->get(Zend_Date::DAY) ?> <?= $D->get(Zend_Date::MONTH_NAME) ?> <?= $D->get(Zend_Date::YEAR) ?>
+    </div>
+    <div class="diario_titolo">
+        <?= $this->escape($entry->Title) ?>
+    </div>
+    <div class="diario_testo">
+        <?php $BBCode = Zwe_Markup_Bbcode::getInstance(); ?>
+        <?= $BBCode->render($entry->Text) ?>
+    </div>
+</div>

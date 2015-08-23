@@ -1,0 +1,13 @@
+<?php
+
+$this->import_Css(array('gdr/avatar'));
+
+$this->import_Js(array('ckeditor/ckeditor',
+                       'ckeditor',
+                       'gdr/avatar'));
+
+$this->title = $this->titleImg = 'Nuova Pagina del Diario';
+$this->headTitle()->append($this->title);
+
+?>
+<?= $this->form ?>

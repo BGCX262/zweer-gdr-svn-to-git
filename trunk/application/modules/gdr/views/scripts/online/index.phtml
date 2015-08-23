@@ -1,0 +1,23 @@
+<?php
+
+$OldLocation = -1;
+
+?>
+<div class="online_count">
+    Giocatori online: <?= count($this->online) ?>
+</div>
+<div class="online_contenitore">
+    <?php foreach($this->online as $pg) : ?>
+
+    <?php if($pg->IDLocation != $OldLocation) : ?>
+    <?php $OldLocation = $pg->IDLocation; ?>
+    <div class="online_location">
+        <?= $pg->IDLocation != 0 ? $pg->Location->Name : 'Mappa' ?>
+    </div>
+    <?php endif; ?>
+        
+    <div class="online_player">
+        <?= $pg->User->Name ?> <?= $pg->User->Surname ?>
+    </div>
+    <?php endforeach; ?>
+</div>

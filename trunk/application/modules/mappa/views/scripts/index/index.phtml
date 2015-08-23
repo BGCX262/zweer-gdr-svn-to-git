@@ -1,0 +1,16 @@
+<?php
+
+$this->title = "Mappa";
+$this->headTitle()->append($this->title);
+
+?>
+<map name="luoghi_mappa" id="luoghi_mappa">
+    <area alt="Sobborgo" shape="circle" coords="77,230,20" href="<?= $this->url(array('controller' => 'sottomappa', 'action' => 'sobborgo', 'module' => 'mappa'), 'default') ?>" />
+    <area alt="Confine Nord" shape="circle" coords="506,210,20" href="<?= $this->url(array('controller' => 'sottomappa', 'action' => 'confineNord', 'module' => 'mappa'), 'default') ?>" />
+    <area alt="Centro Città" shape="circle" coords="390,266,20" href="<?= $this->url(array('controller' => 'sottomappa', 'action' => 'centroCitta', 'module' => 'mappa'), 'default') ?>" />
+    <area alt="Berlino Est" shape="circle" coords="739,274,20" href="<?= $this->url(array('controller' => 'sottomappa', 'action' => 'berlinoEst', 'module' => 'mappa'), 'default') ?>" />
+</map>
+
+<div class="contenitore_mappa">
+    <?= $this->import_Img('luoghi/mappa_bianca.png', array('alt' => 'mappa', 'usemap' => '#luoghi_mappa')) ?>
+</div>

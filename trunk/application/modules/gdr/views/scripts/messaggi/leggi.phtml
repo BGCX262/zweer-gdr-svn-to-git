@@ -1,0 +1,31 @@
+<div class="conversazione_contenitore">
+    <?php foreach($this->messaggi as $messaggio) : ?>
+    <?php $D = new Zend_Date($messaggio->Date); ?>
+    <div class="messaggio_contenitore">
+        <div class="messaggio_autore"><?= $messaggio->Sender ?></div>
+        <div class="messaggio_data"><?= $D ?></div>
+        <div class="messaggio_testo">
+            <?= $this->escape($messaggio->Text) ?>
+        </div>
+    </div>
+    <?php endforeach; ?>
+    <div id="conversazione_new"></div>
+</div>
+<?= $this->form ?>
+
+<script type="text/javascript">
+
+    (function(){
+        var NewForm = document.id('nuovo_messaggio_form');
+
+        new Form.Validator.Inline(NewForm, {
+            onFormValidate: function(passed){
+                if(!passed)
+                    ZweBox.getInstance().shake();
+            }
+        });
+
+        new Form.Request.Append(NewForm, document.id('conversazione_new'));
+    }).delay(2000);
+
+</script>

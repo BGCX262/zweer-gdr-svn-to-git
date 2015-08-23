@@ -1,0 +1,49 @@
+.chat_input
+{
+    position: fixed;
+
+    width: 590px;
+    height: 50px;
+
+    bottom: 0;
+
+    padding: 5px 115px 25px 105px;
+
+    background: #FFF url("../../images/sfondo/sfondo-input.png") no-repeat center top;
+}
+
+.chat_input label
+{
+    display: none;
+}
+
+.chat_input .overTxtLabel
+{
+    margin-top: 2px;
+
+    color: #AAA;
+}
+
+#chat_input_container_type
+{
+    float: left;
+    padding: 1px 5px 1px 0;
+}
+
+#chat_input_error
+{
+    float: right;
+    width: 360px;
+    padding-top: 3px;
+}
+
+#chat_input_text
+{
+    width: 550px;
+    margin-top: 6px;
+}
+
+#chat_messages
+{
+    padding-bottom: 100px;
+}

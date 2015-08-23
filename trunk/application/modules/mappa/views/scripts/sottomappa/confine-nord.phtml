@@ -1,0 +1,19 @@
+<?php
+
+$this->title = "Confine Nord";
+$this->headTitle()->append($this->title);
+
+$this->import_Css(array('gdr/mappa'));
+
+?>
+<map name="luoghi_confineNord" id="luoghi_confineNord">
+    <area alt="Base Militare" shape="rect" coords="132,421,301,511" href="<?= $this->url(array('luogo' => 'baseMilitare', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Stazione Ferroviaria" shape="rect" coords="300,298,472,386" href="<?= $this->url(array('luogo' => 'stazioneFerroviaria', 'action' => 'descrizione'), 'luoghi') ?>" />
+    <area alt="Colline" shape="rect" coords="469,422,641,521" href="<?= $this->url(array('luogo' => 'colline', 'action' => 'descrizione'), 'luoghi') ?>" />
+</map>
+
+<div class="contenitore_mappa">
+    <?= $this->import_Img('luoghi/confineNord-bianco.png', array('alt' => 'mappa', 'usemap' => '#luoghi_confineNord')) ?>
+    <br />
+    <a href="<?= $this->url(array('controller' => 'index', 'action' => 'index', 'module' => 'mappa'), 'default') ?>">&lt;-- Torna alla mappa</a>
+</div>

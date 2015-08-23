@@ -1,0 +1,22 @@
+<?php
+
+$this->isChat = true;
+
+$this->title = $this->titleImg = $this->luogo->Name;
+$this->headTitle()->append($this->title);
+$this->headTitle()->append('Descrizione');
+
+$this->import_Css(array('gdr/chat'));
+
+$this->import_Js(array('gdr/chat'));
+
+?>
+<div class="chat_input">
+    <?= $this->form ?>
+</div>
+
+<div id="chat_messages">
+
+</div>
+
+<?= $this->Js("document.id('chat_messages').store('luogo', '" . $this->luogo->Url . "');"); ?>

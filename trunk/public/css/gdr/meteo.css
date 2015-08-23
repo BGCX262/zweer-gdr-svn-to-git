@@ -1,0 +1,182 @@
+.meteo_contenitore
+{
+    width: 160px;
+    margin: 20px auto auto;
+}
+
+.meteo_meteo_contenitore
+{
+    overflow: auto;
+}
+.meteo_luna_contenitore
+{
+    width: 160px;
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    background: #000;
+    color: #FFF;
+}
+
+.meteo_oggi,
+.meteo_previsioni
+{
+    background: no-repeat 100% 0;
+    padding: 5px;
+    color: #FFF;
+}
+
+.meteo_oggi
+{
+    width: 150px;
+    height: 90px;
+}
+
+.meteo_previsioni
+{
+    width: 30px;
+    text-align: center;
+    background-image: url(./../../images/weather/weatherstrip.png);
+    float: left;
+}
+.meteo_previsioni_giorno
+{
+    padding: 0 0 36px;
+    color: #EAEAEA;
+}
+.meteo_previsioni_temperatura
+{
+    color: #FFF;
+}
+
+/**
+ * Colore di sfondo in accordo col momento della giornata
+ */
+.meteo_oggi.meteo_mattino,
+.meteo_previsioni.meteo_mattino
+{
+    background-color: #83a3c8;
+}
+.meteo_oggi.meteo_pomeriggio,
+.meteo_previsioni.meteo_pomeriggio
+{
+    background-color: #5679a2;
+}
+.meteo_oggi.meteo_sera,
+.meteo_previsioni.meteo_sera
+{
+    background-color: #593e5e;
+}
+.meteo_oggi.meteo_notte,
+.meteo_previsioni.meteo_notte
+{
+    background-color: #4c4c4c;
+}
+
+
+.meteo_oggi .meteo_oggi_temperatura
+{
+    font-size: 32px;
+}
+
+
+/**
+ * Immagine di sfondo in accordo col tempo che fa oggi
+ */
+.meteo_oggi.weather_condition_cloudy, .meteo_oggi.weather_condition_overcast, .meteo_oggi.weather_condition_partly_cloudy, .meteo_oggi.weather_condition_mostly_cloudy
+{
+    background-image: url(../../images/weather/cloudy.png);
+}
+.meteo_oggi.weather_condition_rain, .meteo_oggi.weather_condition_heavy_rain, .meteo_oggi.weather_condition_showers, .meteo_oggi.weather_condition_light_rain, .meteo_oggi.weather_condition_chance_of_rain, .meteo_oggi.weather_condition_mist
+{
+    background-image: url(../../images/weather/rain.png);
+}
+.meteo_oggi.weather_condition_sunny, .meteo_oggi.weather_condition_mostly_sunny
+{
+    background-image: url(../../images/weather/sunny.png);
+}
+.meteo_oggi.meteo_notte.weather_condition_sunny, .meteo_oggi.meteo_notte.weather_condition_mostly_sunny
+{
+    background-image: url(../../images/weather/moon.png);
+}
+.meteo_oggi.weather_condition_clear, .meteo_oggi.weather_condition_icy
+{
+
+}
+.meteo_oggi.weather_condition_windy
+{
+    background-image: url(../../images/weather/windy.png);
+}
+.meteo_oggi.weather_condition_snow, .meteo_oggi.weather_condition_chance_of_snow, .meteo_oggi.weather_condition_flurries, .meteo_oggi.weather_condition_sleet
+{
+    background-image: url(../../images/weather/snow.png);
+}
+.meteo_oggi.weather_condition_rain_snow
+{
+    background-image: url(../../images/weather/rain-snow.png);
+}
+.meteo_oggi.weather_condition_thunderstorm, .meteo_oggi.weather_condition_scattered_thunderstorms, .meteo_oggi.weather_condition_chance_of_storm, .meteo_oggi.weather_condition_storm
+{
+    background-image: url(../../images/weather/thunderstorms.png);
+}
+.meteo_oggi.weather_condition_scattered_showers, .meteo_oggi.weather_condition_drizzle
+{
+    background-image: url(../../images/weather/cloudy-rain.png);
+}
+.meteo_oggi.weather_condition_fog, .meteo_oggi.weather_condition_foggy, .meteo_oggi.weather_condition_smoke, .meteo_oggi.weather_condition_dust, .meteo_oggi.weather_condition_dusty
+{
+    background-image: url(../../images/weather/fog.png);
+}
+.meteo_oggi.weather_condition_haze, .meteo_oggi.weather_condition_hazy
+{
+    background-image: url(../../images/weather/haze.png);
+}
+
+
+/**
+ * Immagine di sfondo in accordo col tempo che fa nelle previsioni
+ */
+.meteo_previsioni.weather_condition_cloudy, .meteo_previsioni.weather_condition_overcast, .meteo_previsioni.weather_condition_mostly_cloudy
+{
+    background-position: -40px 18px;
+}
+.meteo_previsioni.weather_condition_partly_cloudy
+{
+    background-position: -400px 18px;
+}
+.meteo_previsioni.weather_condition_rain, .meteo_previsioni.weather_condition_heavy_rain
+{
+    background-position: -280px 18px;
+}
+.meteo_previsioni.weather_condition_sunny, .meteo_previsioni.weather_condition_clear, .meteo_previsioni.weather_condition_mostly_sunny, .meteo_previsioni.weather_condition_icy
+{
+    background-position: -520px 18px;
+}
+.meteo_previsioni.weather_condition_windy
+{
+    background-position: -560px 18px;
+}
+.meteo_previsioni.weather_condition_snow, .meteo_previsioni.weather_condition_chance_of_snow, .meteo_previsioni.weather_condition_flurries, .meteo_previsioni.weather_condition_sleet
+{
+    background-position: -360px 18px;
+}
+.meteo_previsioni.weather_condition_rain_snow
+{
+    background-position: -320px 18px;
+}
+.meteo_previsioni.weather_condition_showers, .meteo_previsioni.weather_condition_light_rain, .meteo_previsioni.weather_condition_scattered_showers, .meteo_previsioni.weather_condition_chance_of_rain, .meteo_previsioni.weather_condition_mist, .meteo_previsioni.weather_condition_drizzle
+{
+    background-position: -480px 18px;
+}
+.meteo_previsioni.weather_condition_thunderstorm, .meteo_previsioni.weather_condition_scattered_thunderstorms, .meteo_previsioni.weather_condition_chance_of_storm, .meteo_previsioni.weather_condition_storm
+{
+    background-position: -240px 18px;
+}
+.meteo_previsioni.weather_condition_fog, .meteo_previsioni.weather_condition_foggy, .meteo_previsioni.weather_condition_smoke, .meteo_previsioni.weather_condition_dust, .meteo_previsioni.weather_condition_dusty
+{
+    background-position: -120px 18px;
+}
+.meteo_previsioni.weather_condition_haze, .meteo_previsioni.weather_condition_hazy
+{
+    background-position: -440px 18px;
+}
